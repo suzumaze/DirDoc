@@ -1,0 +1,35 @@
+{
+  "scan": {
+    "root": ".",
+    "depth": {
+      "default": 1,
+      "directories": {
+        "src": 3
+      }
+    },
+    "exclude": {
+      "patterns": [
+        ".git",
+        "vendor/*",
+        "vendor-bin/*",
+        "node_modules/*",
+        ".git/*",
+        "*.cache",
+        ".idea",
+        ".phpcs-cache"
+      ],
+      "files": [
+        "*.log",
+        "*.cache"
+      ]
+    },
+    "include": {
+      "root_files": true,
+      "empty_directories": true
+    }
+  },
+  "validation": {
+    "require_description": true,
+    "min_description_length": 10
+  }
+}

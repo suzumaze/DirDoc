@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * DirDoc - ディレクトリ構造をドキュメント化するためのコマンドラインツール
+ */
+
+// オートローダーをロード
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach ($autoloadPaths as $autoload) {
+    if (file_exists($autoload)) {
+        require_once $autoload;
+        break;
+    }
+}
+
+use Suzumaze\DirDoc\Command\DirDocCommand;
+use Symfony\Component\Console\Application;
+
+// アプリケーションの設定
+$application = new Application('DirDoc', '1.0.0');
+$application->add(new DirDocCommand());
+$application->setDefaultCommand('dirdoc', true);
+$application->run();

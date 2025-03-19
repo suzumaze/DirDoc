@@ -1,0 +1,134 @@
+{
+    "name": "Suzumaze.DirDoc",
+    "type": "directory",
+    "description": "プロジェクトのルートディレクトリ",
+    "children": [
+        {
+            "name": "bin",
+            "type": "directory",
+            "description": "実行可能ファイルが格納されるディレクトリ"
+        },
+        {
+            "name": "src",
+            "type": "directory",
+            "description": "ソースコードが格納されるディレクトリ",
+            "children": [
+                {
+                    "name": "Command",
+                    "type": "directory",
+                    "description": "コマンドラインコマンドクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Comparator",
+                    "type": "directory",
+                    "description": "構造比較機能のクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Config",
+                    "type": "directory",
+                    "description": "設定関連のクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Json",
+                    "type": "directory",
+                    "description": "JSON処理関連のクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Model",
+                    "type": "directory",
+                    "description": "データモデルクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Scanner",
+                    "type": "directory",
+                    "description": "ファイルシステムスキャン機能のクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Util",
+                    "type": "directory",
+                    "description": "ユーティリティクラスが格納されるディレクトリ"
+                },
+                {
+                    "name": "Validator",
+                    "type": "directory",
+                    "description": "バリデーション機能のクラスが格納されるディレクトリ"
+                }
+            ]
+        },
+        {
+            "name": "tests",
+            "type": "directory",
+            "description": "テストコードが格納されるディレクトリ"
+        },
+        {
+            "name": "vendor",
+            "type": "directory",
+            "description": "Composerによって管理される外部依存パッケージが格納されるディレクトリ"
+        },
+        {
+            "name": "vendor-bin",
+            "type": "directory",
+            "description": "bamarni\/composer-bin-pluginによって管理される追加ツール用ディレクトリ"
+        },
+        {
+            "name": ".gitignore",
+            "type": "file",
+            "description": "Gitの追跡対象から除外するファイルやディレクトリを指定するファイル"
+        },
+        {
+            "name": "codecov.yml",
+            "type": "file",
+            "description": "Codecov（コードカバレッジサービス）の設定ファイル"
+        },
+        {
+            "name": "composer.json",
+            "type": "file",
+            "description": "Composerパッケージの設定および依存関係を定義するファイル"
+        },
+        {
+            "name": "composer.lock",
+            "type": "file",
+            "description": "Composerにより生成された依存関係のロックファイル"
+        },
+        {
+            "name": "dirdoc.config.json",
+            "type": "file",
+            "description": "DirDocツールの設定ファイル"
+        },
+        {
+            "name": "dirdoc.json",
+            "type": "file",
+            "description": "ディレクトリ構造の定義ファイル"
+        },
+        {
+            "name": "phpcs.xml",
+            "type": "file",
+            "description": "PHP_CodeSnifferの設定ファイル"
+        },
+        {
+            "name": "phpmd.xml",
+            "type": "file",
+            "description": "PHP Mess Detectorの設定ファイル"
+        },
+        {
+            "name": "phpstan.neon",
+            "type": "file",
+            "description": "PHPStanの設定ファイル"
+        },
+        {
+            "name": "phpunit.xml.dist",
+            "type": "file",
+            "description": "PHPUnitのデフォルト設定ファイル"
+        },
+        {
+            "name": "psalm.xml",
+            "type": "file",
+            "description": "Psalmの設定ファイル"
+        },
+        {
+            "name": "README.md",
+            "type": "file",
+            "description": "プロジェクトの概要と使用方法を説明するドキュメント"
+        }
+    ]
+}

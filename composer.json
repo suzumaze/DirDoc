@@ -1,0 +1,88 @@
+{
+    "name": "suzumaze/dirdoc",
+    "description": "プロジェクトのディレクトリ構造をドキュメント化するためのツール",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kenichi Horikawa",
+            "email": "kenching.horikawa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^6.0",
+        "symfony/filesystem": "^6.0"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Suzumaze\\DirDoc\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Suzumaze\\DirDoc\\": [
+                "tests"
+            ]
+        }
+    },
+    "bin": [
+        "bin/dirdoc"
+    ],
+    "scripts": {
+        "dirdoc": "@php bin/dirdoc",
+        "test": "./vendor/bin/phpunit",
+        "coverage": "php -dzend_extension=xdebug.so -dxdebug.mode=coverage ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage",
+        "phpdbg": "phpdbg -qrr ./vendor/bin/phpunit --coverage-text --coverage-html ./build/coverage --coverage-clover=coverage.xml",
+        "pcov": "php -dextension=pcov.so -d pcov.enabled=1 ./vendor/bin/phpunit --coverage-text --coverage-html=build/coverage  --coverage-clover=coverage.xml",
+        "cs": "./vendor/bin/phpcs",
+        "cs-fix": "./vendor/bin/phpcbf src tests",
+        "metrics": "./vendor/bin/phpmetrics --report-html=build/metrics --exclude=Exception src",
+        "clean": [
+            "./vendor/bin/phpstan clear-result-cache",
+            "./vendor/bin/psalm --clear-cache"
+        ],
+        "sa": [
+            "./vendor/bin/psalm --show-info=false"
+        ],
+        "tests": [
+            "@cs",
+            "@sa",
+            "@test"
+        ],
+        "build": [
+            "@clean",
+            "@cs",
+            "@sa",
+            "@pcov",
+            "@metrics"
+        ],
+        "post-install-cmd": "@composer bin all install --ansi",
+        "post-update-cmd": "@composer bin all update --ansi"
+    },
+    "scripts-descriptions": {
+        "dirdoc": "ディレクトリ構造の解析と検証を実行",
+        "test": "ユニットテストの実行",
+        "coverage": "テストカバレッジレポートの生成",
+        "phpdbg": "テストカバレッジレポートの生成 (phpdbg)",
+        "pcov": "テストカバレッジレポートの生成 (pcov)",
+        "cs": "コーディングスタイルのチェック",
+        "cs-fix": "コーディングスタイルの修正",
+        "clean": "一時ファイルの削除",
+        "sa": "静的解析の実行",
+        "metrics": "メトリクスレポートの生成",
+        "tests": "テストと品質チェックの実行",
+        "build": "プロジェクトのビルド"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
+    }
+}
